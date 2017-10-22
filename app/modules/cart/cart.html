@@ -1,0 +1,8 @@
+<div ng-repeat="product in ctrl.cartSrv.products">
+        <span ng-bind="product.id"></span>
+        <span ng-bind="product.price | currency"></span>
+        <md-button ng-click="ctrl.cartSrv.remove(product)" class="md-raised md-warn"> Delete </md-button>         
+    </div>
+    <div>Total:
+        <span ng-bind="ctrl.cartSrv.total() | currency"></span>
+    </div>

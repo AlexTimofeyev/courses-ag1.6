@@ -1,0 +1,40 @@
+{
+	"products": [
+		{
+			"id": 7,
+			"albumName": "someName",
+			"band": "someGroupName",
+			"songs": [
+				{
+					"name": "songName1",
+					"duration": "3:46"
+				},
+				{
+					"name": "songName2",
+					"duration": "7:38"
+				}
+			],
+			"bandDescription": "some group description",
+			"price": 15.99,
+			"img": "1.jpg"
+		},
+		{
+			"id": 5,
+			"albumName": "someName2",
+			"band": "someGroupName2",
+			"songs": [
+				{
+					"name": "songName1",
+					"duration": "6:22"
+				},
+				{
+					"name": "songName2",
+					"duration": "2:12"
+				}
+			],
+			"bandDescription": "some group description",
+			"price": 25.99,
+			"img": "2.jpg"
+		}
+	]
+}

@@ -1,7 +1,49 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>AngularShop</title>
+        <link rel="stylesheet" href="./lib/angular-material/angular-material.css">
         <script src="./lib/angular/angular.min.js"></script>        
+        <script src="./lib/angular-aria/angular-aria.js"></script>
+        <script src="./lib/angular-animate/angular-animate.js"></script>
+        <script src="./lib/angular-material/angular-material.js"></script>        
+        <script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>        
+        
+             
+        <script src="./modules/main/main.js"></script>
+        <script src="./modules/main/main.controller.js"></script>
+        <script src="./modules/main/main.routes.js"></script>
+        <script src="./modules/main/main.services.js"></script>
+
+        <script src="./modules/cart/cart.js"></script>
+        <script src="./modules/cart/cart.controller.js"></script>
+        <script src="./modules/cart/cart.routes.js"></script>        
+        <script src="./modules/cart/cart.services.js"></script>        
+
+        
+        <script src="./app.js"></script>  
+        <script src="./app.config.js"></script>
+           
+        <style>.active { color: red; font-weight: bolder; }</style>
     </head>
-    <body> Hello Guys </body>
+    <body ng-app="app">
+         <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h3>
+                    <span>Shop</span>
+                </h3>
+            </div>
+        </md-toolbar>      
+
+        <md-nav-bar>
+            <md-nav-item md-nav-sref="main" name="main">Main</md-nav-item>
+            <md-nav-item md-nav-sref="cart" name="cart">Cart
+                 (<span ng-controller="cartController as cart" ng-bind="cart.cartSrv.getCount()"></span>)
+                </md-nav-item>            
+            <md-nav-item md-nav-sref="order" name="order">Order</md-nav-item>            
+        </md-nav-bar> 
+
+        <div ui-view class="md-padding"></div>  
+        
+    </body>
 </html>

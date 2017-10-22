@@ -1,0 +1,37 @@
+<div layout="row">
+    <div class="md-padding" flex="20"  layout="column">
+
+        <div> Filter: <input type="text" ng-model="main.filter" >  </div>
+        <br>
+        <div>
+            Sort By 
+            <select ng-model="main.orderBy">
+                <option value="name">Name</option>
+                <option value="age">Newest</option>
+                <option value="price">Price</option>
+            </select>
+        </div>
+    </div>
+    <div flex="80" class="md-padding">
+        <div 
+        ng-style="{backgroundColor:isInCart(product)?'#c8e4fd':''}"
+        layout="row" layout-align="start center"                
+        ng-repeat="product in main.products | filter : main.filter | orderBy : main.orderBy">            
+            <div flex="60" class="md-padding"  > 
+            {{product.name}} {{product.age}}  
+                    <i ng-bind="product.price | currency"></i>
+            <!-- <md-button ng-click="toCart(product)"> To Cart</md-button>  -->
+            </div>
+
+            <div flex >
+                <div ng-switch="isInCart(product)">
+                        <div ng-switch-when="false"><md-button ng-click="toCart(product)" class="md-raised md-primary" > Add to Cart</md-button></div>            
+                        <div ng-switch-when="true"><md-button ng-click="deleteFromCart(product)" class="md-raised md-warn"> Delete </md-button></div>                               
+                </div>
+            </div>
+            <md-divider md-inset ng-if="!$last"></md-divider>
+
+        </div>
+        
+    </div>
+</div>
